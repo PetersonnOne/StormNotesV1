@@ -41,9 +41,13 @@ const DatabaseModule: React.FC = () => {
   ]);
 
   const [showAddForm, setShowAddForm] = useState(false);
-  const [newDatabase, setNewDatabase] = useState({
+  const [newDatabase, setNewDatabase] = useState<{
+    name: string;
+    type: 'table' | 'collection' | 'document';
+    description: string;
+  }>({
     name: '',
-    type: 'table' as const,
+    type: 'table',
     description: ''
   });
 
